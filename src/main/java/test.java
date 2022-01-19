@@ -23,7 +23,11 @@ public class test
         System.out.println("当前：" + connectionPool.getPoolSize());
         try
         {
-            Connection connection = connectionPool.getConnection();
+            for (int i = 0; i < 11; i++)
+            {
+                Connection connection = connectionPool.getConnection();
+                connection.close();
+            }
         }
         catch (SQLException e)
         {
